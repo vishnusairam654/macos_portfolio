@@ -43,12 +43,6 @@ const dockApps = [
         canOpen: true,
     },
     {
-        id: "safari",
-        name: "Articles", // was "Safari"
-        icon: "safari.png",
-        canOpen: true,
-    },
-    {
         id: "photos",
         name: "Gallery", // was "Photos"
         icon: "photos.png",
@@ -74,55 +68,30 @@ const dockApps = [
     },
 ];
 
-const blogPosts = [
-    {
-        id: 1,
-        date: "Sep 2, 2025",
-        title:
-            "TypeScript Explained: What It Is, Why It Matters, and How to Master It",
-        image: "/images/blog1.png",
-        link: "https://jsmastery.com/blog/typescript-explained-what-it-is-why-it-matters-and-how-to-master-it",
-    },
-    {
-        id: 2,
-        date: "Aug 28, 2025",
-        title: "The Ultimate Guide to Mastering Three.js for 3D Development",
-        image: "/images/blog2.png",
-        link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-three-js-for-3d-development",
-    },
-    {
-        id: 3,
-        date: "Aug 15, 2025",
-        title: "The Ultimate Guide to Mastering GSAP Animations",
-        image: "/images/blog3.png",
-        link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-gsap-animations",
-    },
-];
-
 const techStack = [
     {
         category: "Frontend",
         items: ["React.js", "Next.js", "TypeScript"],
     },
     {
-        category: "Mobile",
-        items: ["React Native", "Expo"],
-    },
-    {
         category: "Styling",
-        items: ["Tailwind CSS", "Sass", "CSS"],
+        items: ["Tailwind CSS", "CSS"],
     },
     {
         category: "Backend",
-        items: ["Node.js", "Express", "NestJS", "Hono"],
+        items: ["Node.js", "Express", "NestJS"],
     },
     {
         category: "Database",
-        items: ["MongoDB", "PostgreSQL"],
+        items: ["MongoDB", "mySQL"],
     },
     {
         category: "Dev Tools",
-        items: ["Git", "GitHub", "Docker"],
+        items: ["Git", "GitHub"],
+    },
+    {
+        category: "Core",
+        items: ["AI ML", "DSA"],
     },
 ];
 
@@ -132,28 +101,21 @@ const socials = [
         text: "Github",
         icon: "/icons/github.svg",
         bg: "#f4656b",
-        link: "https://github.com/JavaScript-Mastery-Pro",
-    },
-    {
-        id: 2,
-        text: "Platform",
-        icon: "/icons/atom.svg",
-        bg: "#4bcb63",
-        link: "https://jsmastery.com/",
+        link: "https://github.com/vishnusairam654",
     },
     {
         id: 3,
         text: "Twitter/X",
         icon: "/icons/twitter.svg",
         bg: "#ff866b",
-        link: "https://x.com/jsmasterypro",
+        link: "https://x.com/vsram654",
     },
     {
         id: 4,
         text: "LinkedIn",
         icon: "/icons/linkedin.svg",
         bg: "#05b6f6",
-        link: "https://www.linkedin.com/company/javascriptmastery/posts/?feedView=all",
+        link: "https://www.linkedin.com/in/vishnu-sai-ram-190004306/",
     },
 ];
 
@@ -225,7 +187,7 @@ const WORK_LOCATION = {
         // ▶ Project 1
         {
             id: 5,
-            name: "Nike Ecommerce Website Application",
+            name: "Movie Web Page with API",
             icon: "/images/folder.png",
             kind: "folder",
             position: "top-10 left-5", // icon position inside Finder
@@ -233,7 +195,7 @@ const WORK_LOCATION = {
             children: [
                 {
                     id: 1,
-                    name: "Nike Project.txt",
+                    name: "movie-app.txt",
                     icon: "/images/txt.png",
                     kind: "file",
                     fileType: "txt",
@@ -278,7 +240,7 @@ const WORK_LOCATION = {
         // ▶ Project 2
         {
             id: 6,
-            name: "AI Resume Analyzer",
+            name: "iPhone Web Page",
             icon: "/images/folder.png",
             kind: "folder",
             position: "top-52 right-80",

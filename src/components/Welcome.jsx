@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { gsap } from "gsap";
+import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 const FONT_WEIGHTS = {
@@ -20,7 +20,7 @@ const renderText = (text, className, baseWeight = 400) => {
 };
 
 const setupTextHover = (container, type) => {
-    if (!container) return () => {};
+    if (!container) return () => { };
 
     const letters = container.querySelectorAll("span");
     const { min, max, default: base } = FONT_WEIGHTS[type];
@@ -39,6 +39,7 @@ const setupTextHover = (container, type) => {
 
         letters.forEach((letter) => {
             const { left: l, width: w } = letter.getBoundingClientRect();
+            // Calculate distance from mouse to the center of the letter
             const distance = Math.abs(mouseX - (l - left + w / 2));
             const intensity = Math.exp(-(distance ** 2) / 2000);
 
@@ -73,8 +74,9 @@ const Welcome = () => {
         };
     }, []);
 
+    // ADDED id="welcome" below
     return (
-        <section>
+        <section id="welcome">
             <p ref={subtitleRef}>
                 {renderText(
                     "Hey, I'm Vishnu! Welcome to my",
