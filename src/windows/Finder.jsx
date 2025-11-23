@@ -9,12 +9,33 @@ import useWindowStore from "#/store/window";
 const Finder = () => {
     const { openWindow } = useWindowStore();
     const { activeLocation, setActiveLocation } = useLocationStore();
-    const openItem = (item) => {
-        if (item.fileType === "pdf") return openWindow("resume");
-        if (item.kind === "folder") return setActiveLocation(item);
-        if (['fig', 'url'].includes(item.fileType) && item.href) return window.open(item.href, '_blank');
 
-        openWindow(`${item.fileType}-${item.kind}`, item)
+    const openItem = (item) => {
+        console.log("Opening item:", item); // Debug log
+
+        // Handle PDF files
+        if (item.fileType === "pdf") {
+            console.log("Opening resume window"); // Debug log
+            openWindow("resume");
+            return;
+        }
+
+        // Handle folders
+        if (item.kind === "folder") {
+            setActiveLocation(item);
+            return;
+        }
+
+        // Handle external links (Figma, URLs)
+        if (['fig', 'url'].includes(item.fileType) && item.href) {
+            window.open(item.href, '_blank');
+            return;
+        }
+
+        // Handle other file types (txt, img)
+        const windowKey = `${item.fileType}file`;
+        console.log("Opening window:", windowKey); // Debug log
+        openWindow(windowKey, item);
     };
 
     const renderList = (items) => items.map((item) => (
@@ -55,13 +76,13 @@ const Finder = () => {
                     </div>
                 </div>
                 <ul className="content">
-                    {activeLocation?.children.map((item) => (
+                    {activeLocation?.children?.map((item) => (
                         <li
                             key={item.id}
                             className={item.position}
                             onClick={() => openItem(item)}
                         >
-                            <img src={item.icon} alt={item} />
+                            <img src={item.icon} alt={item.name} />
                             <p>{item.name}</p>
                         </li>
                     ))}
